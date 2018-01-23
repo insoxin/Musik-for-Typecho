@@ -8,7 +8,7 @@ High Resolution	Yes
 Widget Ready	Yes
 Compatible Browsers	IE8, IE9, IE10, IE11, Firefox, Safari, Opera, Chrome, Edge
 Compatible With	BuddyPress 2.3.x, Easy Digital Downloads 2.0.x, Bootstrap 3.x
-Software Version 
+Software Version Typecho 1.0 Typecho 1.1
 ThemeForest Files Included	PHP Files, CSS Files, JS Files
 Columns	3
 Documentation	Well Documented
