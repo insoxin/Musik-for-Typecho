@@ -2,7 +2,7 @@
 
     <?php if (!empty($this->options->sidebarBlock) && in_array('gg', $this->options->sidebarBlock)): ?>
   <!--  公告 -->
-<div class="alert alert-warning alert-block"> <button type="button" class="close" data-dismiss="alert">×</button> <h4><i class="fa fa-bell-alt"></i>公告：</h4><p><?php $this->options->gg(); ?> </p></div>
+<div class="alert alert-warning alert-block"> <button type="button" class="close" data-dismiss="alert">×</button> <h4><i class="fa fa-bell-alt"></i>随想：</h4><p><?php $this->options->gg(); ?> </p></div>
 
   <!--  公告 -->
    <?php endif; ?> <form id="search" method="post" action="./" class="" role="search"> <div class="form-group clearfix m-b-none"> <div class="input-group m-t m-b"> <span class="input-group-btn"> <button type="submit" name="search" class="btn btn-sm bg-empty text-muted btn-icon"><i class="fa fa-search"></i></button> </span>

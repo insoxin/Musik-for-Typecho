@@ -72,7 +72,7 @@ overflow:hidden;
 <br><i class="fa fa-hand-o-right"></i>地址：
 <a itemtype="url" href="<?php $this->permalink() ?>" class="title"><?php $this->permalink() ?></a>
 <br><i class="fa fa-hand-o-right"></i>百度收录:<?php echo baidu_record() ?>
-</div>
+</div>本文二维码:<img src="https://api.isoyu.com/qr/?m=0&e=L&p=5&url=<?php $this->permalink() ?>"></a>
 </span>  <p>
                          <a href="#moreless" class="btn btn-sm btn-default" data-toggle="class:show"> <i class="fa fa-plus text"></i> <span class="text">More</span> <i class="fa fa-minus text-active"></i> <span class="text-active">Less</span> </a>
 </p>

@@ -40,7 +40,7 @@
 <?php endif; ?>
                     <div class="form-group">
                    
-                      <textarea class="form-control" rows="5"cols="50" name="text" id="textarea" class="textarea"placeholder="在这里输入你的评论(博客开启了评论审核功能,待审核通过后即可显示)"
+                      <textarea class="form-control" rows="5"cols="50" name="text" id="textarea" class="textarea"placeholder="在这里输入你的评论(博客开启了评论审核功能,待审核通过后即可显示) "
 onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('misubmit').click();return false};" required ><?php $this->remember('text'); ?></textarea>
                     </div>
                     <div class="form-group">

@@ -31,7 +31,6 @@ $slimg = new Typecho_Widget_Helper_Form_Element_Select('slimg', array(
 //关于
     $ab = new Typecho_Widget_Helper_Form_Element_Text('ab', NULL, 'about.html', _t('关于独立页面地址'), _t('新建独立页面，引入about模板，这里就填加独立页面的后缀地址,如blog.isoyu.ccom/about.html就填about.html'));
  $form->addInput($ab);
-
 //视频分类
     $sp = new Typecho_Widget_Helper_Form_Element_Text('sp', NULL, 'category/video', _t('视频分类页地址'), _t('这里添加视频分类的超链接后缀地址，网址如/index.php/category/video就在这里添加index.php/category/video即可'));
  $form->addInput($sp);
@@ -60,9 +59,6 @@ $slimg = new Typecho_Widget_Helper_Form_Element_Select('slimg', array(
     $tt = new Typecho_Widget_Helper_Form_Element_Text('tt', NULL, 'https://api.isoyu.com/bing_images.php', _t('关于界面展示图
 '), _t(' 填入图片地址，建议图片高度158px'));
     $form->addInput($tt);
- //建站时间
-    $time = new Typecho_Widget_Helper_Form_Element_Text('time', NULL, '11,11,2012', _t('博客成立时间'), _t('在这里填入博客的成立时间,格式要求“月,日,年”，如填入“11,11,2012”,注意逗号是英文输入法下的逗号'));
-    $form->addInput($time);
     //友情链接
     $FriendLink = new Typecho_Widget_Helper_Form_Element_Textarea('FriendLink', NULL,'<a style="margin-bottom: 5px;" href="https://blog.isoyu.com" class="btn btn-s-md btn-default"  target="_blank">姬长信</a>', _t('友情链接'), _t('每条一行，按照输入框里面格式。。'));
     $form->addInput($FriendLink);
@@ -73,31 +69,6 @@ $form->addInput($tongji);
 
 }
 
-
-function getFriendWall(){
-   $period = time() - 99999999999999999999999; // 单位: 秒, 时间范围: 2592000为30天
-   $db = Typecho_Db::get();
-   $sql = $db->select('COUNT(author) AS cnt', 'author', 'url', 'mail')
-   ->from('table.comments')
-   ->where('created > ?', $period )
-   ->where('status = ?', 'approved')
-   ->where('type = ?', 'comment')          
-   ->where('authorId = ?', '0')
-   ->where('mail != ?', '')   //排除自己上墙
-   ->group('author')
-   ->order('cnt', Typecho_Db::SORT_DESC)
-   ->limit('50');    //读取几位用户的信息
-   $result = $db->fetchAll($sql);
-$mostactive = "";
-$my_array=array('www','0','1','2'); //我自定义的随机一个头像服务器,减少同时往一个服务器发起多次请求
-   if (count($result) > 0) {
-       foreach ($result as $value) {
-           $mostactive .= '<li><a href="' . $value['url'] . '" title="' . $value['author'] . ':' . $value['cnt'] . '℃" target="_blank" rel="nofollow">';
-           $mostactive .= '<img class="avatar" src="https://'.$my_array[rand(0,3)].'.gravatar.com/avatar/'.md5(strtolower($value['mail'])).'?s=40&d=&r=G"/></a></li>';
-       }
-       echo $mostactive;
-   }
-}
 //判断内容页是否百度收录
 
 function baidu_record() {
@@ -141,7 +112,7 @@ function get_post_view($archive)
     }
     $row = $db->fetchRow($db->select('views')->from('table.contents')->where('cid = ?', $cid));
     if ($archive->is('single')) {
-       $db->query($db->update('table.contents')->rows(array('views' => (int) $row['views'] + 23))->where('cid = ?', $cid));
+       $db->query($db->update('table.contents')->rows(array('views' => (int) $row['views'] + 1))->where('cid = ?', $cid));
     }
     echo $row['views'];
 }

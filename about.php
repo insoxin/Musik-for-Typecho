@@ -95,16 +95,14 @@
                           </div>
                           <div class="h4 m-t m-b-xs"><?php $this->author() ?>  </div>
                          <!--  如果要修改下面small里面的内容,请固定在12字内,否则网站布局会乱哦~ -->
-<small class="text-muted m-b"><span class="smalltxt">本博客已稳定运行<script type="text/JavaScript">
-document.write('<font color=red>');
-var urodz= new Date("<?php $this->options->time(); ?>");
+<small class="text-muted m-b"><span class="smalltxt">本博客已稳定运行<font color=red><strong><script language="JavaScript" type="text/javascript">
+var urodz= new Date("11/11/2012");
 var now = new Date();
 var ile = now.getTime() - urodz.getTime();
 var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
-document.write(dni);
-document.write('</font>天');
+document.write(+dni)
 </script>
-
+</strong></font>天
 </small>
                         </div>                      
                       </div>

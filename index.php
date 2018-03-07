@@ -21,10 +21,10 @@ $this->need('header.php');
                   <ul class="breadcrumb">
                     <li> <a href="<?php $this->options->siteUrl(); ?>"><i class="fa fa-home"></i> 首页</a></li>
                     <li class="active">       <a href="#"><i class="fa fa-list-ul"></i> <?php $this->archiveTitle(array(
-'category'=>_t('分类 %s 下的文章'),
-'search'=>_t('包含关键字 %s 的文章'),
-'tag' =>_t('标签 %s 下的文章'),
-'author'=>_t('%s 发布的文章')
+'category'=>_t('最新分类 %s 下的文章'),
+'search'=>_t('最新包含关键字 %s 的文章'),
+'tag' =>_t('最新标签 %s 下的文章'),
+'author'=>_t('最新%s 发布的文章')
 ), '', ' -如下 '); ?></a>   </li>
  </ul>
                   <!-- / .breadcrumb -->
